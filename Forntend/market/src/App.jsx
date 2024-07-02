@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import './component/Navbar.jsx'
-import Navbar from './component/Navbar.jsx'
-import LandingPage from './component/LandingPage.jsx'
+import React from 'react';
+import AppRouter from './AppRouter'; // Make sure the path is correct
+import './App.css';
+import Cart from './components/Cart';
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <div className="App">
+            <AppRouter />
+            
 
-  return (
-    <>
-    <Navbar />
-    <LandingPage />
-    </>
-  )
+        </div>
+    );
 }
 
-export default App
+export default App;

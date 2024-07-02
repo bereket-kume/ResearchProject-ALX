@@ -24,3 +24,22 @@ class Item(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
+    
+class Message(models.Model):
+    product = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='messages')
+    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
+    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = (('product', 'sender', 'receiver'),)
+        ordering = ['timestamp']
+
+    def save(self, *args, **kwargs):
+        if self.sender == self.receiver:
+            raise ValueError("Sender and receiver cannot be the same user.")
+        super(Message, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Message from {self.sender} to {self.receiver} about {self.product}'
