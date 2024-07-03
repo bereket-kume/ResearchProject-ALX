@@ -34,7 +34,6 @@ const ModalLogin = ({ isOpen, onClose }) => {
 
             const decodedToken = jwtDecode(data.access);
             console.log("Decoded Token:", decodedToken); 
-            window.alert(decodedToken)
             
             const userId = decodedToken.user_id;
             localStorage.setItem('userId', userId);
