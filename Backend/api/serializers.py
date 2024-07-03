@@ -1,6 +1,6 @@
 from .models import Item, Category
 from rest_framework import serializers
-from .models import Item, Category
+from .models import Item, Category, MessageCustomer, ChatCustomer
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
@@ -8,7 +8,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     class Meta:
         model = User
-        fields = ['username', 'password', 'email']
+        fields = ['id','username', 'password', 'email']
 
     def create(self, validated_data):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
@@ -60,3 +60,14 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
+
+class ChatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChatCustomer
+        fields = ['id', 'product', 'buyer', 'seller', 'created_at']
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MessageCustomer
+        fields = ['id', 'chat', 'sender', 'content', 'timestamp']
+        

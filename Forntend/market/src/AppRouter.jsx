@@ -8,6 +8,7 @@ import LoginModal from "./components/ModalLogin";
 import Profile from "./components/Profile";
 import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
+import ModalLogin from "./components/ModalLogin";
 
 const AppRouter = () => {
     return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
                     <Route path="/shop" element={<Product />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/view/:id" element={<ProductDetail />} />
+                    
                 </Routes>
             </div>
         </Router>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { jwtDecode } from "jwt-decode";
 
 const ModalLogin = ({ isOpen, onClose }) => {
     const [isLoginMode, setIsLoginMode] = useState(true);
@@ -19,10 +20,8 @@ const ModalLogin = ({ isOpen, onClose }) => {
             try {
                 const response = await axios.post(`http://127.0.0.1:8000/api/register/`, user);
                 console.log("Registration successful:", response.data);
-                // Optionally handle success, e.g., show a success message or redirect to login.
             } catch (error) {
                 console.error("Registration failed:", error);
-                // Handle registration error, e.g., show an error message to the user.
             }
         }
 
@@ -32,16 +31,24 @@ const ModalLogin = ({ isOpen, onClose }) => {
             localStorage.setItem('access', data.access);
             localStorage.setItem('refresh', data.refresh);
             localStorage.setItem('username', user.username);
+
+            const decodedToken = jwtDecode(data.access);
+            console.log("Decoded Token:", decodedToken); 
+            window.alert(decodedToken)
+            
+            const userId = decodedToken.user_id;
+            localStorage.setItem('userId', userId);
+         
+
             axios.defaults.headers['Authorization'] = `Bearer ${data.access}`;
             window.location.href = '/';
         } catch (error) {
             console.error("There was an error!", error);
-            window.alert("There was an error!")
+            window.alert("There was an error!");
         }
     };
 
     return (
-        console.log(isLoginMode),
         <div className={`fixed inset-0 z-50 overflow-auto ${isOpen ? 'flex' : 'hidden'} justify-center`}>
             {/* Dark overlay */}
             <div className="fixed inset-0 bg-black opacity-50" onClick={onClose}></div>
@@ -55,7 +62,7 @@ const ModalLogin = ({ isOpen, onClose }) => {
                     <h2 className="text-2xl font-bold mb-4">{isLoginMode ? 'Login' : 'Register'}</h2>
                     <form className="flex flex-col items-center" onSubmit={handleSubmit}>
                         <div className="mb-4 w-full">
-                            <label htmlFor="username" className="block text-sm font-medium text-gray-700">Username</label>
+                            <label htmlFor="username" className="block text-sm font-medium text-gray-900">Username</label>
                             <input type="text" id="username" name="username" className="form-input mt-1 block w-full" />
                         </div>
                         {!isLoginMode && (

@@ -1,9 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
 
-#category of  element user can add
 class Category(models.Model):
     name = models.CharField(max_length=255)
     class Meta:
@@ -25,21 +23,26 @@ class Item(models.Model):
     def __str__(self):
         return self.name
     
-class Message(models.Model):
-    product = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='messages')
+class ChatCustomer(models.Model):
+    product = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='chats')
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='buyer_chats')
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='seller_chats')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f'Chat for {self.product.name}'
+    
+class MessageCustomer(models.Model):
+    chat = models.ForeignKey(ChatCustomer, on_delete=models.CASCADE, related_name='messages')
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
     content = models.TextField()
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.sender.username}: {self.content[:50]}'
 
     class Meta:
-        unique_together = (('product', 'sender', 'receiver'),)
         ordering = ['timestamp']
 
     def save(self, *args, **kwargs):
-        if self.sender == self.receiver:
-            raise ValueError("Sender and receiver cannot be the same user.")
-        super(Message, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return f'Message from {self.sender} to {self.receiver} about {self.product}'
+        super().save(*args, **kwargs)
