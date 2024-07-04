@@ -7,7 +7,7 @@ const Product = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/items/")
+        axios.get("http://54.144.145.14/api/items/")
             .then((res) => {
                 setProducts(res.data);
                 console.log(res.data)
@@ -26,7 +26,7 @@ const Product = () => {
                         <div className="card">
                             <div className="card-image">
                                 <img 
-                                    src={`http://127.0.0.1:8000/${product.image}`} 
+                                    src={`http://54.144.145.14/${product.image}`} 
                                     className="product-image" 
                                     alt={product.name} 
                                 />
