@@ -42,7 +42,7 @@ const ProductDetail = () => {
             console.log("UserId:", userId)
 
             const response = await axios.post(
-                `http://localhost:8000/api/items/${id}/chats/`,
+                `http://localhost:8000/api/items/${productId}/chats/`,
                 {
                     product: productId,
                     buyer: userId,
@@ -78,7 +78,7 @@ const ProductDetail = () => {
             const receiver = product.created_by; // Assuming created_by is the seller
     
             const response = await axios.post(
-                `http://54.144.145.14/api/items/items/${id}/chats/${chatId}/message`,
+                `http://54.144.145.14/api/items/items/${productId}/chats/${chatId}/message`,
                 {
                     content: message,
                     chat: chatId,
@@ -100,58 +100,57 @@ const ProductDetail = () => {
         }
     };
     
-
     return (
-        <div className="container mx-auto p-6 mt-10 flex flex-row mt-20">
-            <div className="w-3/5">
+        <div className="container mx-auto p-6 mt-10 flex flex-col lg:flex-row gap-6">
+            <div className="lg:w-3/5">
                 <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-                {product.image && <img src={`http://127.0.0.1:8000/${product.image}`} alt={product.name} className="w-full h-64 object-cover mb-4" />}
+                {product.image && (
+                    <img 
+                        src={`http://54.144.145.14/${product.image}`} 
+                        alt={product.name} 
+                        className="w-full h-64 object-cover mb-4"
+                    />
+                )}
                 <p className="text-lg mb-4 text-gray-600">{product.descripation}</p>
                 <p className="text-xl font-bold mb-4 text-gray-900">${product.price}</p>
             </div>
-            <div className="w-2/5">
+            <div className="lg:w-2/5">
                 <button
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-200"
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-200 mb-4"
                     onClick={createChat}
                 >
-                     "Message Seller"
+                    Message Seller
                 </button>
 
-               <div>
-                    {showChat && (  
-                        <div>
-                            <h2 className="text-2xl font-bold mt-4">Chat</h2>
-                            <div className="border-t border-b border-gray-200 mt-4">
-                                <div className="flex flex-row items-center justify-between p-4">
-                                    <div className="flex flex-row items-center">
-                                        <img src="https://randomuser.me/api/portraits" alt="User" className="w-10 h-10 object-cover rounded-full" />
-                                        <p className="text-lg font-bold ml-2">Seller</p>
-                                    </div>
+                {showChat && (  
+                    <div>
+                        <h2 className="text-2xl font-bold mt-4">Chat</h2>
+                        <div className="border-t border-b border-gray-200 mt-4">
+                            <div className="flex flex-row items-center justify-between p-4">
+                                <div className="flex flex-row items-center">
+                                    <img src="https://randomuser.me/api/portraits" alt="User" className="w-10 h-10 object-cover rounded-full" />
+                                    <p className="text-lg font-bold ml-2">Seller</p>
                                 </div>
                             </div>
                         </div>
-                    )}
-               </div>
-                    
-                <div>
-                <form onSubmit={sendMessage} className="mt-4">
-                        <textarea
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            className="form-textarea mt-1 block w-full bg-white text-gray-700 border border-gray-300 rounded-md"
-                            placeholder="Type your message here"
-                            required
-                        ></textarea>
-                        <button
-                            type="submit"
-                            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-2 transition duration-200"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-                   
+                    </div>
+                )}
 
+                <form onSubmit={sendMessage} className="mt-4">
+                    <textarea
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="form-textarea mt-1 block w-full bg-white text-gray-700 border border-gray-300 rounded-md"
+                        placeholder="Type your message here"
+                        required
+                    ></textarea>
+                    <button
+                        type="submit"
+                        className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-2 transition duration-200"
+                    >
+                        Send Message
+                    </button>
+                </form>
             </div>
         </div>
     );

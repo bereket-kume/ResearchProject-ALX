@@ -10,13 +10,13 @@ const Product = () => {
         axios.get("http://54.144.145.14/api/items/")
             .then((res) => {
                 setProducts(res.data);
-                console.log(res.data)
+                console.log(res.data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
-    }, []); 
-    
+    }, []);
+
     return (
         <div className="pro-container mt-20">
             <h1>SHOP</h1>
@@ -42,8 +42,7 @@ const Product = () => {
                                         pathname: `/view/${product.id}`,
                                         state: { product }
                                     }} 
-                                    className="btn" 
-                                    style={{ display: 'block', backgroundColor: '#1181f0' }}
+                                    className="btn"
                                 >
                                     View
                                 </Link>

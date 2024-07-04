@@ -1,9 +1,10 @@
 import React from 'react';
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div className="hero_area m-20px">
+    <div className="hero_area">
       <section className="slider_section">
         <div className="slider_container">
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -13,20 +14,18 @@ const LandingPage = () => {
                   <div className="row">
                     <div className="col-md-7">
                       <div className="detail-box">
-                        <h1>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                           Welcome To Our
+                          <br />
                           Gebey Shop
                         </h1>
-                        <p>
-                        Gebey is your vibrant marketplace where you can effortlessly sell and buy a variety 
-                        of products. Step into our world and discover a diverse range of offerings. 
-                        From cutting-edge technology to timeless classics, explore our latest products and 
-                        embark on a journey of shopping and selling like never before. Whether you're upgrading your 
-                        gadgets or finding unique treasures, Gebey is your go-to destination for all things buying and
-                         selling!                        </p>
-                        <a href=''>
-                          Get Started
-                        </a>
+                        <p className="mt-4 text-lg md:text-xl lg:text-2xl">
+                          Gebey is your vibrant marketplace where you can effortlessly sell and buy a variety of products. Step into our world and discover a diverse range of offerings. From cutting-edge technology to timeless classics, explore our latest products and embark on a journey of shopping and selling like never before. Whether you're upgrading your gadgets or finding unique treasures, Gebey is your go-to destination for all things buying and selling!
+                        </p>
+                       
+                          <Link className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out"  to="/shop"> Get Started </Link>
+                          
+              
                       </div>
                     </div>
                     <div className="col-md-5">

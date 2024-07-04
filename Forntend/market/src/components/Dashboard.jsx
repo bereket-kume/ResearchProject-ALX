@@ -152,7 +152,7 @@ const Dashboard = () => {
                 </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {items.length > 0 ? (
                     items.map((item) => (
                         localStorage.getItem('username') === item.created_by_username && (
@@ -162,24 +162,22 @@ const Dashboard = () => {
                                     className="w-full h-48 object-cover"
                                     alt={item.name} />
                                 <div className="p-4">
-                                <h1 className="text-xl font-bold mb-2">{item.name}</h1>
-                                </div>
-                                <div className="p-4">
+                                    <h1 className="text-xl font-bold mb-2">{item.name}</h1>
                                     <p className="text-gray-700">{item.descripation}</p>
-                                </div>
-                                <div className="flex justify-end p-4">
-                                    <button
-                                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2 transition duration-200"
-                                        onClick={() => handleEditItem(item)}
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-200"
-                                        onClick={() => handleDeleteItem(item.id)}
-                                    >
-                                        Delete
-                                    </button>
+                                    <div className="flex justify-end mt-4">
+                                        <button
+                                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2 transition duration-200"
+                                            onClick={() => handleEditItem(item)}
+                                        >
+                                            Edit
+                                        </button>
+                                        <button
+                                            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-200"
+                                            onClick={() => handleDeleteItem(item.id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         )
