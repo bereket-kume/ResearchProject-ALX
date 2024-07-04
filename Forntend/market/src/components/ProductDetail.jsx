@@ -78,7 +78,7 @@ const ProductDetail = () => {
             const receiver = product.created_by; // Assuming created_by is the seller
     
             const response = await axios.post(
-                `http://localhost:8000/api/items/items/${id}/chats/${chatId}/message`,
+                `http://54.144.145.14/api/items/items/${id}/chats/${chatId}/message`,
                 {
                     content: message,
                     chat: chatId,

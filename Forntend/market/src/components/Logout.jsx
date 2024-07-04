@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const Logout = () => {
     useEffect(() => {
-        axios.post("http://127.0.0.1:8000/api/logout/", {}, {
+        axios.post("http://54.144.145.14/api/logout/", {}, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("access")}`,
             },
