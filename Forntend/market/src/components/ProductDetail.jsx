@@ -81,7 +81,7 @@ const ProductDetail = () => {
                 `http://localhost:8000/api/items/items/${id}/chats/${chatId}/message`,
                 {
                     content: message,
-                    chat: chatId, // Use the dynamically fetched chat ID
+                    chat: chatId,
                     sender: userId,
                     receiver: receiver,
                 },
@@ -116,8 +116,25 @@ const ProductDetail = () => {
                 >
                      "Message Seller"
                 </button>
-        
-                    <form onSubmit={sendMessage} className="mt-4">
+
+               <div>
+                    {showChat && (  
+                        <div>
+                            <h2 className="text-2xl font-bold mt-4">Chat</h2>
+                            <div className="border-t border-b border-gray-200 mt-4">
+                                <div className="flex flex-row items-center justify-between p-4">
+                                    <div className="flex flex-row items-center">
+                                        <img src="https://randomuser.me/api/portraits" alt="User" className="w-10 h-10 object-cover rounded-full" />
+                                        <p className="text-lg font-bold ml-2">Seller</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+               </div>
+                    
+                <div>
+                <form onSubmit={sendMessage} className="mt-4">
                         <textarea
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
@@ -132,6 +149,8 @@ const ProductDetail = () => {
                             Send Message
                         </button>
                     </form>
+                </div>
+                   
 
             </div>
         </div>

@@ -60,11 +60,7 @@ const Navbar = () => {
                             <Link to="/cart" className="nav-link">
                                 <i className="fa fa-shopping-bag" aria-hidden="true"></i>
                             </Link>
-                            <form className="form-inline">
-                                <button className="btn nav_search-btn" type="submit">
-                                    <i className="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </form>
+                           
                         </div>
                     </div>
                     <div className='w-16 h-16 border border-gray-500 rounded-full bg-black'>

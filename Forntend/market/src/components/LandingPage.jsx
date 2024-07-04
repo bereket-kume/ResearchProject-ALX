@@ -24,8 +24,8 @@ const LandingPage = () => {
                         embark on a journey of shopping and selling like never before. Whether you're upgrading your 
                         gadgets or finding unique treasures, Gebey is your go-to destination for all things buying and
                          selling!                        </p>
-                        <a href="https://example.com">
-                          Contact Us
+                        <a href=''>
+                          Get Started
                         </a>
                       </div>
                     </div>

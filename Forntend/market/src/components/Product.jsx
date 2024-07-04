@@ -43,7 +43,7 @@ const Product = () => {
                                         state: { product }
                                     }} 
                                     className="btn" 
-                                    style={{ display: 'block', backgroundColor: 'green' }}
+                                    style={{ display: 'block', backgroundColor: '#1181f0' }}
                                 >
                                     View
                                 </Link>

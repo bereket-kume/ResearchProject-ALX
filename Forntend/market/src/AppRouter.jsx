@@ -20,7 +20,6 @@ const AppRouter = () => {
                     <Route path="/shop" element={<Product />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/view/:id" element={<ProductDetail />} />
-                    
                 </Routes>
             </div>
         </Router>
