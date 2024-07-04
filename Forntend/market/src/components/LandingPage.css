@@ -164,9 +164,9 @@ a:focus {
 
 .slider_section .slider_container {
   color: black;
-  background-color: #f0f4f8;
+  background-color: #bfc3c7;
   padding: 25px;
-  border-radius: 0 0 15px 15px;
+  border-radius: 30px 0 15px 15px;
 }
 
 .slider_section .row {
