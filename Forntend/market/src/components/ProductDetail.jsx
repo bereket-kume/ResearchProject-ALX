@@ -42,7 +42,7 @@ const ProductDetail = () => {
             console.log("UserId:", userId)
 
             const response = await axios.post(
-                `http://localhost:8000/api/items/${productId}/chats/`,
+                `http://54.144.145.14/api/items/${productId}/chats/`,
                 {
                     product: productId,
                     buyer: userId,
