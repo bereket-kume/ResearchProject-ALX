@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import Cart from "./components/Cart";
 import ProductDetail from "./components/ProductDetail";
 import ModalLogin from "./components/ModalLogin";
+import Footer from "./components/Footer";
 
 const AppRouter = () => {
     return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/view/:id" element={<ProductDetail />} />
                 </Routes>
+                <Footer />
             </div>
         </Router>
     );

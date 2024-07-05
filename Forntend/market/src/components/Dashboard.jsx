@@ -137,7 +137,7 @@ const Dashboard = () => {
 
     return (
         <div className="container mx-auto p-6 mt-10">
-            <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
+            <h1 className="text-3xl font-bold mb-4 text-white">Dashboard</h1>
             <div className="flex justify-end mb-4">
                 <button
                     className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-200"
@@ -156,7 +156,7 @@ const Dashboard = () => {
                 {items.length > 0 ? (
                     items.map((item) => (
                         localStorage.getItem('username') === item.created_by_username && (
-                            <div key={item.id} className="flex flex-col bg-white shadow-md rounded-lg overflow-hidden">
+                            <div key={item.id} className="flex flex-col bg-gray-300 shadow-md rounded-lg overflow-hidden">
                                 <img
                                     src={`http://54.144.145.14/${item.image}`}
                                     className="w-full h-48 object-cover"

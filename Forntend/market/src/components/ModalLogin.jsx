@@ -53,26 +53,26 @@ const ModalLogin = ({ isOpen, onClose }) => {
             <div className="fixed inset-0 bg-black opacity-50" onClick={onClose}></div>
 
             {/* Modal content */}
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="bg-white p-8 rounded-lg shadow-lg w-96 relative" style={{ height: 'fit-content' }}>
-                    <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onClick={onClose}>
+            <div className="flex items-center justify-center min-h-screen" >
+                <div className="bg-white p-8 rounded-lg shadow-lg w-96 relative" style={{ height: 'fit-content',background: 'linear-gradient(45deg, #210cdf, #181515,  #181515)' }}>
+                    <button className="absolute top-4 right-4 text-gray-500 hover:text-white" onClick={onClose}>
                         <i className="fa fa-times">X</i>
                     </button>
-                    <h2 className="text-2xl font-bold mb-4">{isLoginMode ? 'Login' : 'Register'}</h2>
+                    <h2 className="text-2xl font-bold mb-4 text-white">{isLoginMode ? 'Login' : 'Register'}</h2>
                     <form className="flex flex-col items-center" onSubmit={handleSubmit}>
                         <div className="mb-4 w-full">
-                            <label htmlFor="username" className="block text-sm font-medium text-gray-900">Username</label>
-                            <input type="text" id="username" name="username" className="form-input mt-1 block w-full" />
+                            <label htmlFor="username" className="block text-sm font-medium text-white">Username</label>
+                            <input type="text" id="username" name="username" className="form-input mt-1 block w-full border-none" />
                         </div>
                         {!isLoginMode && (
                             <div className="mb-4 w-full">
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" className="form-input mt-1 block w-full" />
+                                <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
+                                <input type="email" id="email" name="email" className="form-input mt-1 block w-full border-none" />
                             </div>
                         )}
                         <div className="mb-6 w-full">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                            <input type="password" id="password" name="password" className="form-input mt-1 block w-full" />
+                            <label htmlFor="password" className="block text-sm font-medium text-white">Password</label>
+                            <input type="password" id="password" name="password" className="form-input mt-1 block w-full border-none" />
                         </div>
                         <div className="flex justify-end w-full">
                             <button className={`bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600`} type='submit'>

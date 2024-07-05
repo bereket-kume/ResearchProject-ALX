@@ -7,6 +7,9 @@ body {
   margin: 100px 10px;
   align-items: center;
   color: black;
+  padding: 3rem 0;
+  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
+  border-radius: 50px 0px 50px 50px;
 }
 
 .about_section .row {
@@ -17,6 +20,44 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+.card {
+  width: 100%;
+  max-width: 300px;
+  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* Adjusted transition property */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(45deg, #0b063b, #20b934, #181515); /* Gradient background */
+}
+
+.card h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #dde4ee; /* Dark gray text */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about {
@@ -28,13 +69,16 @@ body {
   border-radius: 10px;
   height: 600px;
   padding: 10px;
-  background-color: white;
+  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
 }
 
 .contact_section {
+  
   margin: 100px 10px;
   align-items: center;
   color: black;
+  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
+  border-radius: 50px 0px 50px 50px;
 }
 
 .contact_heading {
@@ -164,7 +208,7 @@ a:focus {
 
 .slider_section .slider_container {
   color: black;
-  background-color: #bfc3c7;
+  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
   padding: 25px;
   border-radius: 30px 0 15px 15px;
 }

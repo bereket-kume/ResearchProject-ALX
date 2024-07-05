@@ -1,3 +1,4 @@
+@import 'animate.css/animate.min.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,6 @@ body::-webkit-scrollbar{
     display: none;
 }
 body{
-    font-family: "poppins", sans-serif;
-    background-color: #f0f4f8;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(45deg, #638fe0, #5f5c5c, #03305a);
 }
