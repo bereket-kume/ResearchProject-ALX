@@ -8,7 +8,6 @@ from .serializers import UserLoginSerializer, UserRegisterSerializer, UserSerial
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
-# Create your views here.
 
 @api_view(['POST'])
 def user_register(request):
