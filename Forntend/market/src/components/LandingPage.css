@@ -6,7 +6,7 @@ body {
 .about_section {
   margin: 100px 10px;
   align-items: center;
-  color: black;
+  color: white;
   padding: 3rem 0;
   background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
   border-radius: 50px 0px 50px 50px;
@@ -24,19 +24,15 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 .card {
+  color: white;
   width: 100%;
   max-width: 300px;
-  background: linear-gradient(45deg, #1fac99, #2050b9, #a31414); /* Gradient background */
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   transition: transform 0.3s ease-in-out, background 0.3s ease-in-out; /* Adjusted transition property */
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  background: linear-gradient(45deg, #0b063b, #20b934, #181515); /* Gradient background */
-}
 
 .card h1 {
   font-size: 1.25rem;
@@ -45,7 +41,7 @@ body {
 }
 
 .card p {
-  color: #dde4ee; /* Dark gray text */
+  color: black; /* Dark gray text */
 }
 
 /* Animation */

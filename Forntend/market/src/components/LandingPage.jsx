@@ -45,25 +45,25 @@ const LandingPage = () => {
           <div className="flex flex-wrap justify-center gap-8">
             <div className="card" style={{ background: 'linear-gradient(45deg, #210cdf, #181515,  #181515)' }}>
               <h1 className="text-xl font-semibold mb-4 text-blue-600">Buy</h1>
-              <p className="text-gray-700">
+              <p className="text-white" style={{ color: 'white'}}>
                 Find the products you're looking for right here on our platform. Start purchasing today and explore a wide range of offerings tailored to your needs!
               </p>
             </div>
             <div className="card" style={{ background: 'linear-gradient(45deg, #210cdf, #181515,  #181515)' }}>
               <h1 className="text-xl font-semibold mb-4 text-green-600">Sell</h1>
-              <p className="text-gray-700">
+              <p className="text-white" style={{ color: 'white'}}>
                 Find potential buyers for your products on our platform. Start selling today and connect with a community of interested buyers looking for what you have to offer!
               </p>
             </div>
             <div className="card" style={{ background: 'linear-gradient(45deg, #210cdf, #181515,  #181515)' }}>
               <h1 className="text-xl font-semibold mb-4 text-yellow-600">Trade</h1>
-              <p className="text-gray-700">
+              <p  style={{ color: 'white'}}>
                 In our marketplace, you have the opportunity to not only buy and sell but also to trade. Explore diverse trading options and discover new opportunities in our marketplace.
               </p>
             </div>
             <div className="card" style={{ background: 'linear-gradient(45deg, #210cdf, #181515,  #181515)' }}>
               <h1 className="text-xl font-semibold mb-4 text-purple-600">Exchange</h1>
-              <p className="text-gray-700">
+              <p className="text-white"style={{ color: 'white'}}>
                 In our marketplace, you can not only buy and sell but also trade and exchange products. Explore various options and discover new opportunities.
               </p>
             </div>

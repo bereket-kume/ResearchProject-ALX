@@ -1,15 +1,14 @@
 .pro-container {
     padding: 20px;
-    background-color: #f7f7f7; /* Light gray background */
+    background-color: #e9dfdf;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 h1 {
-    color: #444; /* Darker gray for better contrast */
-    font-size: 24px;
-    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     padding: 20px;
 }
@@ -26,23 +25,20 @@ h1 {
 }
 
 .card {
-    background: #fff; /* White background for cleaner look */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.02); /* Subtle scale effect on hover */
-}
 
 .card-image {
+    overflow: hidden;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f1f1f1; /* Lighter background */
+    background: #f9f9f9;
 }
 
 .product-image {
@@ -53,26 +49,26 @@ h1 {
 }
 
 .card-body {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
 }
 
 .card-title {
     font-size: 1.2em;
-    margin-bottom: 8px;
-    color: #333; /* Dark text for title */
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .card-text {
-    color: #555; /* Lighter gray for text */
-    margin-bottom: 12px;
+    color: #777;
+    margin-bottom: 15px;
 }
 
 .card-price {
     font-size: 1.1em;
-    color: #333; /* Consistent text color */
+    color: #333;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .card-button {
@@ -83,7 +79,7 @@ h1 {
 
 .btn {
     display: block;
-    background-color: #4CAF50; /* Neutral green for button */
+    background-color: rgb(16, 113, 224);
     color: white;
     padding: 10px;
     text-align: center;
@@ -92,7 +88,7 @@ h1 {
 }
 
 .order-button {
-    background-color: #28a745; /* Slightly darker green */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -102,7 +98,7 @@ h1 {
 }
 
 .order-button:hover {
-    background-color: #218838; /* Even darker green on hover */
+    background-color: #0056b3;
 }
 
 /* Responsive Styles */
