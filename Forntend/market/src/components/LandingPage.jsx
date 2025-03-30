@@ -19,7 +19,7 @@ const LandingPage = () => {
                           <br />
                           Gebey Shop
                         </h1>
-                        <p className="mt-4 text-lg md:text-xl lg:text-2xl animate__animated animate__fadeInUp">
+                        <p className="mt-4 text-lg md:text-xl lg:text-2xl animate__animated animate__fadeInUp" style={{ color: 'white'}}>
                           Gebey is your vibrant marketplace where you can effortlessly sell and buy a variety of products. Step into our world and discover a diverse range of offerings. From cutting-edge technology to timeless classics, explore our latest products and embark on a journey of shopping and selling like never before. Whether you're upgrading your gadgets or finding unique treasures, Gebey is your go-to destination for all things buying and selling!
                         </p>
                         <Link className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out animate__animated animate__fadeInUp" to="/shop"> Get Started </Link>
