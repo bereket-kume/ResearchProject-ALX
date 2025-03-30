@@ -18,7 +18,7 @@ const ModalLogin = ({ isOpen, onClose }) => {
         if (!isLoginMode) {
             user.email = e.target.elements.email.value;
             try {
-                const response = await axios.post(`http://54.144.145.14/api/register/`, user);
+                const response = await axios.post(`http://13.51.242.2:8000/api/register/`, user);
                 console.log("Registration successful:", response.data);
             } catch (error) {
                 console.error("Registration failed:", error);
@@ -26,7 +26,7 @@ const ModalLogin = ({ isOpen, onClose }) => {
         }
 
         try {
-            const { data } = await axios.post(`http://54.144.145.14/api/login/`, user);
+            const { data } = await axios.post(`http://13.51.242.2:8000/api/login/`, user);
             localStorage.clear();
             localStorage.setItem('access', data.access);
             localStorage.setItem('refresh', data.refresh);

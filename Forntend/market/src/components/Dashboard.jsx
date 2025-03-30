@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://54.144.145.14/api/items/', {
+                const response = await axios.get(' http://127.0.0.1:8000/api/items/', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access')}`,
                     },
@@ -32,7 +32,7 @@ const Dashboard = () => {
 
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://54.144.145.14/api/categories/', {
+                const response = await axios.get(' http://127.0.0.1:8000/api/categories/', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('access')}`,
                     },
@@ -67,7 +67,7 @@ const Dashboard = () => {
         formData.append('Category', newItem.Category);
 
         try {
-            const response = await axios.post('http://54.144.145.14/api/items/create/', formData, {
+            const response = await axios.post('http://127.0.0.1:8000/api/items/create/', formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('access')}`,
                     'Content-Type': 'multipart/form-data'
@@ -83,7 +83,7 @@ const Dashboard = () => {
 
     const handleDeleteItem = async (itemId) => {
         try {
-            await axios.delete(`http://54.144.145.14/api/items/${itemId}/delete/`, {
+            await axios.delete(`http://127.0.0.1:8000/api/items/${itemId}/delete/`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('access')}`
                 }
@@ -119,7 +119,7 @@ const Dashboard = () => {
         formData.append('Category', newItem.Category);
 
         try {
-            const response = await axios.put(`http://54.144.145.14/api/items/${currentItem.id}/update/`, formData, {
+            const response = await axios.put(`http://127.0.0.1:8000/api/items/${currentItem.id}/update/`, formData, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('access')}`,
                     'Content-Type': 'multipart/form-data'
@@ -158,7 +158,7 @@ const Dashboard = () => {
                         localStorage.getItem('username') === item.created_by_username && (
                             <div key={item.id} className="flex flex-col bg-gray-300 shadow-md rounded-lg overflow-hidden">
                                 <img
-                                    src={`http://54.144.145.14/${item.image}`}
+                                    src={`http://127.0.0.1:8000/${item.image}`}
                                     className="w-full h-48 object-cover"
                                     alt={item.name} />
                                 <div className="p-4">

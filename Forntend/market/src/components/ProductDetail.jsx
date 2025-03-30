@@ -18,7 +18,7 @@ const ProductDetail = () => {
                     return;
                 }
 
-                const response = await axios.get(`http://54.144.145.14/api/items/${productId}/`);
+                const response = await axios.get(` http://13.51.242.2:8000/api/items/${productId}/`);
                 setProduct(response.data);
             } catch (error) {
                 console.error("Error fetching product:", error);
@@ -42,7 +42,7 @@ const ProductDetail = () => {
             console.log("UserId:", userId)
 
             const response = await axios.post(
-                `http://54.144.145.14/api/items/${productId}/chats/`,
+                ` http://13.51.242.2:8000/api/items/${productId}/chats/`,
                 {
                     product: productId,
                     buyer: userId,
@@ -78,7 +78,7 @@ const ProductDetail = () => {
             const receiver = product.created_by; // Assuming created_by is the seller
     
             const response = await axios.post(
-                `http://54.144.145.14/api/items/items/${productId}/chats/${chatId}/message`,
+                ` http://13.51.242.2:8000/api/items/items/${productId}/chats/${chatId}/message`,
                 {
                     content: message,
                     chat: chatId,
@@ -106,7 +106,7 @@ const ProductDetail = () => {
                 <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
                 {product.image && (
                     <img 
-                        src={`http://54.144.145.14/${product.image}`} 
+                        src={` http://13.51.242.2:8000/${product.image}`} 
                         alt={product.name} 
                         className="w-full h-64 object-cover mb-4"
                     />
