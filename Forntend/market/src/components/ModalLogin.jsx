@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
+import API_BASE_URL from "../config";
 
 const ModalLogin = ({ isOpen, onClose }) => {
     const [isLoginMode, setIsLoginMode] = useState(true);
@@ -18,7 +19,7 @@ const ModalLogin = ({ isOpen, onClose }) => {
         if (!isLoginMode) {
             user.email = e.target.elements.email.value;
             try {
-                const response = await axios.post(`http://13.51.242.2:8000/api/register/`, user);
+                const response = await axios.post(`${API_BASE_URL}/api/register/`, user);
                 console.log("Registration successful:", response.data);
             } catch (error) {
                 console.error("Registration failed:", error);
@@ -26,7 +27,7 @@ const ModalLogin = ({ isOpen, onClose }) => {
         }
 
         try {
-            const { data } = await axios.post(`http://13.51.242.2:8000/api/login/`, user);
+            const { data } = await axios.post(`${API_BASE_URL}/api/login/`, user);
             localStorage.clear();
             localStorage.setItem('access', data.access);
             localStorage.setItem('refresh', data.refresh);
